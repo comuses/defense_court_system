@@ -1,0 +1,33 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\Mod;
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class ModFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Mod::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'modID' => $this->faker->text(255),
+            'name' => $this->faker->name(),
+            'address' => $this->faker->address(),
+            'state' => $this->faker->state(),
+            'description' => $this->faker->sentence(15),
+        ];
+    }
+}
